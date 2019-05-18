@@ -1,6 +1,8 @@
 jobs:
   main:
     image: node:8
+    annotations:
+      screwdriver.cd/cpu: MICRO
     requires: [ ~pr, ~commit ]
     steps:
       - test: echo test
