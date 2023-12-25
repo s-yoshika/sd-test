@@ -1,6 +1,6 @@
 jobs:
   main:
-    image: rockylinux:9
+    image: node:20
     environment:
       TERM: xterm
       USER_SHELL_BIN: bash
