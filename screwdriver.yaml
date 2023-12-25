@@ -1,8 +1,9 @@
 jobs:
   main:
-    image: node:8
-    annotations:
-      screwdriver.cd/cpu: MICRO
+    image: node:20
+    environment:
+      TERM: xterm
+      USER_SHELL_BIN: bash
     requires: [ ~pr, ~commit ]
     steps:
       - test: echo test
