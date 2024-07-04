@@ -4,11 +4,12 @@ jobs:
     environment:
       TERM: xterm
       USER_SHELL_BIN: bash
-    requires: [ ~pr, ~commit ]
+    requires: [ virtual ]
     steps:
       - test: echo test
   virtual:
     image: node:lts
+    requires: [ ~commit ]
     annotations:
       screwdriver.cd/virtualJob: true
     steps:
