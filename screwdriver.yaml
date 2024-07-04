@@ -7,3 +7,9 @@ jobs:
     requires: [ ~pr, ~commit ]
     steps:
       - test: echo test
+  virtual:
+    image: node:lts
+    annotations:
+      screwdriver.cd/virtualJob: true
+    steps:
+    - echo: echo ok
