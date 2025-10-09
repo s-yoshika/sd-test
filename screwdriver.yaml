@@ -1,6 +1,6 @@
 jobs:
   main:
-    image: node:20
+    image: docker.io/library/node:20
     environment:
       TERM: xterm
       USER_SHELL_BIN: bash
