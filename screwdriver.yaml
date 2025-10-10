@@ -8,7 +8,7 @@ jobs:
     steps:
       - test: echo test
       - curl: curl https://www.yahoo.co.jp
-      - sleep: sleep 889
+      - sleep: sleep 312
   virtual:
     image: node:lts
     requires: [ ~commit ]
