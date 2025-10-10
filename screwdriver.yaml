@@ -1,18 +1,9 @@
 jobs:
   main:
     image: docker.io/library/node:20
-    environment:
-      TERM: xterm
-      USER_SHELL_BIN: bash
     requires: [ virtual ]
     steps:
-      - test: echo test
-      - curl: curl https://www.yahoo.co.jp
-      - sleep: sleep 312
-  virtual:
-    image: node:lts
-    requires: [ ~commit ]
-    annotations:
-      screwdriver.cd/virtualJob: true
-    steps:
-    - echo: echo ok
+      - step1: echo test
+      - step2: curl https://www.yahoo.co.jp
+      - step3: dd if=/dev/urandom of=testfile bs=1024 count=1000; test 1 = 2
+      - teardown-step4: sleep 300
