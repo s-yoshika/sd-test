@@ -1,8 +1,8 @@
 jobs:
   main:
     image: docker.io/library/node:20
-    requires: [ virtual ]
+    requires: []
     steps:
       - step1: curl https://www.yahoo.co.jp
       - step2: dd if=/dev/urandom of=testfile bs=1024 count=2000; test 1 = 2
-      - teardown-step3: sleep 300
+      - teardown-step3: sleep 120
