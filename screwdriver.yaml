@@ -4,5 +4,6 @@ jobs:
     requires: []
     steps:
       - step1: curl https://www.yahoo.co.jp
-      - step2: for i in $(seq $((1024*1024*2))); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c 1024; echo; sleep 0.02; done
+      # generate big log for test
+      - biglog: for i in $(seq $((1024*1024*2))); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c 1024; echo; sleep 0.02; done
       - teardown-step3: sleep 5
