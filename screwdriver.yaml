@@ -5,5 +5,5 @@ jobs:
     steps:
       - step1: curl https://www.yahoo.co.jp
       # generate big log for test
-      - biglog: for i in $(seq $((1024*512))); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c $((1024*2)); echo; sleep 0.02; done
+      - biglog: for i in $(seq $((1024*512))); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c $((1024*2)); echo; done
       - teardown-step3: sleep 5
