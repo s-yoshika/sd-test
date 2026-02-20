@@ -13,4 +13,4 @@ jobs:
     requires: []
     steps:
       # generate middle sized log for test
-      - middlelog: for i in $(seq 300); do for i in $(seq 1024); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c $((1024*1)); echo; done; sleep 1; done
+      - middlelog: for i in $(seq 300); do for i in $(seq 512); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c $((1024*2)); echo; done; sleep 0.5; done
