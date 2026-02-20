@@ -1,5 +1,5 @@
 jobs:
-  main:
+  big:
     image: docker.io/library/node:20
     requires: []
     steps:
@@ -7,3 +7,10 @@ jobs:
       # generate big log for test
       - biglog: for i in $(seq 512); do for i in $(seq 1024); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c $((1024)); echo; done; sleep 0.5; done
       - teardown-step3: sleep 5
+
+  middle:
+    image: cd.docker-registry.corp.yahoo.co.jp:4443/rocky/rocky9-build-base:latest
+    requires: []
+    steps:
+      # generate middle sized log for test
+      - middlelog: for i in $(seq 300); do for i in $(seq 1024); do LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c $((1024*1)); echo; done; sleep 1; done
