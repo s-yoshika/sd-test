@@ -20,4 +20,4 @@ jobs:
     requires: []
     steps:
       # small log
-      - step1: curl https://www.yahoo.co.jp; curl https://www.yahoo.co.jp; curl https://www.yahoo.co.jp
+      - step1: for i in $(seq 5); do curl https://www.yahoo.co.jp; done
