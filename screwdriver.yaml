@@ -20,4 +20,4 @@ jobs:
     requires: []
     steps:
       # small log
-      - step1: for i in $(seq 1500); do echo i; done
+      - step1: for i in $(seq 1500); do echo $i; done
