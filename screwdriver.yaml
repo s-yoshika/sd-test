@@ -21,3 +21,10 @@ jobs:
     steps:
       # small log
       - step1: for i in $(seq 3000); do echo $i; done
+
+  small:
+    image: docker.io/library/node:20
+    requires: []
+    steps:
+      # small log
+      - step1: for i in $(seq 3000); do echo $i; done
