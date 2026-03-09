@@ -21,3 +21,11 @@ jobs:
     steps:
       # small log
       - step1: for i in $(seq 3000); do echo $i; done
+
+  ssk:
+    image: docker.io/library/node:20
+    requires: []
+    annotations:
+      screwdriver.cd/buildCluster: ssk
+    steps:
+      - ssk: echo ssk
