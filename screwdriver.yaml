@@ -29,3 +29,11 @@ jobs:
       screwdriver.cd/buildCluster: ssk
     steps:
       - ssk: echo ssk
+
+  kks:
+    image: docker.io/library/node:20
+    requires: []
+    annotations:
+      screwdriver.cd/buildCluster: kks
+    steps:
+      - ssk: echo kks
